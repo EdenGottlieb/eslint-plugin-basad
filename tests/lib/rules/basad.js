@@ -9,33 +9,33 @@ ruleTester.run('basad', rule, {
   valid: [
     `//basad
     fasdf`,
-    `// basad
-    fasdf`,
-    ` // basad
-    fasdf`,
     ` //basad
     fasdf`,
     `/*basad*/
     fasdf`,
     `/* basad */
     fasdf`,
-    ` /*basad*/
-    fasdf`,
-    `/*basad*/
-    fasdf`,
     {
       code: `sadfasdf
       //basad`,
-      options: [true]
+      options: [null, {allowAnywhere: true}]
     },
     {
       code: `//customBlessing`,
-      options: [false, 'customBlessing']
+      options: ['customBlessing']
+    },
+    {
+      code: `//blessingOne`,
+      options: [['blessingOne', 'blessingTwo']]
     },
     {
       code: `asdfas
       //customBlessing`,
-      options: [true, 'customBlessing']
+      options: ['customBlessing', {allowAnywhere: true}]
+    },
+    {
+      code: `//bAsAd`,
+      options: [null, {ignoreCase: true}]
     }
   ],
   invalid: [
@@ -45,7 +45,7 @@ ruleTester.run('basad', rule, {
       errors: [{message: ERROR_MESSAGE}]
     },
     {
-      code: `
+      code: `//asdfasf
     // asdfasdfasdf`,
       errors: [{message: ERROR_MESSAGE}]
     },
@@ -56,16 +56,19 @@ ruleTester.run('basad', rule, {
     },
     {
       code: `//basad
-        //customBlessing
-      `,
-      options: [false, 'customBlessing'],
+        //customBlessing`,
+      options: ['customBlessing', {allowAnywhere: false}],
       errors: [{message: ERROR_MESSAGE}]
     },
     {
-      code: `//basad
-        //cusaomBling
-      `,
-      options: [true, 'customBlessing'],
+      code: `//asfdasdf
+        //asdasasdf`,
+      options: ['customBlessing', {allowAnywhere: true}],
+      errors: [{message: ERROR_MESSAGE}]
+    },
+    {
+      code: `//bAsAd`,
+      options: [null, {ignoreCase: false}],
       errors: [{message: ERROR_MESSAGE}]
     }
   ]
