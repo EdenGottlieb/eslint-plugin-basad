@@ -1,13 +1,17 @@
 {
   "name": "eslint-plugin-basad",
   "description": "ESLint rule to add בס\"ד to the top of each file",
-  "author": "Eden Gottlieb",
-  "main": "index.js",
   "version": "1.0.0",
-  "license": "MIT",
+  "author": "Eden Gottlieb <eden.gottlieb@gmail.com>",
   "scripts": {
     "test": "mocha tests/lib/rules/basad.js"
   },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:EdenGottlieb/eslint-plugin-basad.git"
+  },
+  "license": "MIT",
   "devDependencies": {
     "eslint": "^4.9.0",
     "eslint-config-wix": "^1.1.16",

@@ -27,7 +27,7 @@ $ npm install eslint-plugin-basad --save-dev
 
 # Basic Configuration
 
-Add the `plugins` property to your `.eslintrc` and specify eslint-plugin-basad as a plugin.
+Add the `plugins` property to your `.eslintrc` file and specify eslint-plugin-basad as a plugin.
 
 ```json
 {
@@ -90,6 +90,21 @@ _Note: only Severity is required._
 	}
 ]
 ```
+```
+"basad/basad": [
+	2,
+	null,
+	{
+		"ignoreCase": true,
+		"allowAnywhere": true
+	}
+]
+```
+# Contributing
+
+Feel free to create PRs with additional features, bug fixes, general improvements, and anything else really.
+Please take note that this plugin is dead simple by design - zero dependencies and minimal code.
+Any complication added will need to be justified properly.
 
 
 
