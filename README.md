@@ -1,5 +1,7 @@
 eslint-plugin-basad
 ===================
+![build-status](https://img.shields.io/circleci/project/github/EdenGottlieb/eslint-plugin-basad.svg)
+![version](https://img.shields.io/npm/v/eslint-plugin-basad.svg)
 
 # tldr;
 
